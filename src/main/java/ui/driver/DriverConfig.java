@@ -30,11 +30,11 @@ public class DriverConfig {
             }
         }
         driver.get().manage().window().maximize();
-        driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.get().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         return driver.get();
     }
 
-    public static void removeDriver(){
+    public static void removeDriver() {
         driver.remove();
     }
 
