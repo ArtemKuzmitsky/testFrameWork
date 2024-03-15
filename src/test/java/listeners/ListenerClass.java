@@ -9,12 +9,13 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import uiTests.BaseTest;
+import utils.PropertiesReader;
 
 import java.io.File;
 
 public class ListenerClass extends BaseTest implements ITestListener {
     private final Logger logger = LogManager.getLogger(ListenerClass.class);
-    String filePath = "./resources/screenshots/";
+    String filePath = PropertiesReader.testConfigProperties.screenshotFolder();
 
     @Override
     public void onTestFailure(ITestResult testResult) {

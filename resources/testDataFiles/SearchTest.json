@@ -1,3 +1,20 @@
 {
-  "searchData": "test"
+  "searchItemTest": {
+    "data": [
+      {
+        "searchData": "Test1",
+        "login": "Test2",
+        "password": "Test3"
+      }
+    ]
+  },
+  "anotherSearchItemTest": {
+    "data": [
+      {
+        "searchData": "Test11",
+        "login": "Test22",
+        "password": "Test33"
+      }
+    ]
+  }
 }

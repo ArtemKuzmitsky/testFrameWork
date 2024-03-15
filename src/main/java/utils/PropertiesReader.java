@@ -10,7 +10,7 @@ import java.util.Properties;
 
 public class PropertiesReader {
     private final Properties properties = new Properties();
-    protected static TestConfigProperties testConfigProperties;
+    public static TestConfigProperties testConfigProperties;
     Logger logger = LogManager.getLogger(getClass());
 
     //Classic variant
