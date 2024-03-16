@@ -12,6 +12,10 @@ out
 !.idea/icon.png
 *.iml
 *.ipr
+.classpath
+.project
+.settings/
+target/
 
 #Eclipse files
 *.settings
