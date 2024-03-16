@@ -2,5 +2,6 @@ package ui.driver;
 
 public enum DriverType {
     CHROME,
-    FIREFOX
+    FIREFOX,
+    REMOTE
 }

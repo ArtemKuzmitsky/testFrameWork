@@ -9,12 +9,12 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import uiTests.BaseTest;
+import utils.PropertiesReader;
 
 import java.io.File;
 
 public class ListenerClass extends BaseTest implements ITestListener {
     private final Logger logger = LogManager.getLogger(ListenerClass.class);
-    String filePath = "./resources/screenshots/";
 
     @Override
     public void onTestFailure(ITestResult testResult) {
@@ -24,6 +24,7 @@ public class ListenerClass extends BaseTest implements ITestListener {
     }
 
     public void takeScreenShot(String testName, WebDriver driver) {
+       String filePath =  PropertiesReader.testConfigProperties.screenshotFolder();
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
            File file=FileUtils.getFile(filePath, testName + ".png");

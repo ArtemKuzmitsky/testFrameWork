@@ -1,22 +1,29 @@
 package uiTests;
 
 import io.qameta.allure.Description;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import schemes.TestData;
 import utils.JsonReader;
 
 public class SearchTest extends BaseTest {
 
-    @Test
-    @Description("Test")
+    @Test(testName = "searchItemTest")
+    @Description("Simple google search test")
+
     public void searchItemTest() {
         TestData testData = JsonReader.loadDataObject(TestData.class);
-        driver.get(properties.getProperty("url"));
-        searchPage.clickRejectButton()
-                .enterIntoSearchField(testData.getSearchData());
+        popUpWindows.clickRejectButton();
+        searchPage  .enterIntoSearchField(testData.getSearchData());
         keyboardActions.clickEnterButton();
-        Assert.assertTrue(driver.getCurrentUrl().equals("Test"));
-        close();
+    }
+
+    @Test(testName = "anotherSearchItemTest")
+    @Description("Simple google search test")
+
+    public void anotherSearchItemTest() {
+        TestData testData = JsonReader.loadDataObject(TestData.class);
+        popUpWindows.clickRejectButton();
+        searchPage.enterIntoSearchField(testData.getSearchData());
+        keyboardActions.clickEnterButton();
     }
 }

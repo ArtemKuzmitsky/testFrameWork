@@ -6,11 +6,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
-    protected WebDriver driver = null;
+    protected  WebDriver driver;
     @FindBy(xpath = ".//textarea[@class='gLFyf']")
     WebElement searchField;
-    @FindBy(xpath = "//div[contains(text(), \"Reject all\") and @class='QS5gu sy4vM']")
-    WebElement rejectButton;
+
 
     public SearchPage(WebDriver driver) {
         this.driver = driver;
@@ -19,11 +18,6 @@ public class SearchPage {
 
     public SearchPage enterIntoSearchField(String text) {
         searchField.sendKeys(text);
-        return this;
-    }
-
-    public SearchPage clickRejectButton() {
-        rejectButton.click();
         return this;
     }
 

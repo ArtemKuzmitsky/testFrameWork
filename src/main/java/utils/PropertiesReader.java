@@ -10,13 +10,14 @@ import java.util.Properties;
 
 public class PropertiesReader {
     private final Properties properties = new Properties();
-    protected static TestConfigProperties testConfigProperties;
+    public static TestConfigProperties testConfigProperties;
     Logger logger = LogManager.getLogger(getClass());
 
     //Classic variant
     public void readProperties() {
         try {
-            properties.load(new FileInputStream(System.getProperty("user.dir") + "/resources/testConfig.properties"));
+            String test = System.getProperty("user.dir") + "src/main/resources/testConfig.properties";
+            properties.load(new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/testConfig.properties"));
         } catch (IOException e) {
             logger.error("Exception in PropertiesReader class" + e.getMessage());
         }
