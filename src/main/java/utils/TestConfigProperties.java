@@ -2,7 +2,7 @@ package utils;
 
 import org.aeonbits.owner.Config;
 
-@Config.Sources("file:./resources/testConfig.properties")
+@Config.Sources("file:./src/main/resources/testConfig.properties")
 public interface TestConfigProperties extends Config {
 
     String browser();

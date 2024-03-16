@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
-    private WebDriver driver = null;
+    protected  WebDriver driver;
     @FindBy(xpath = ".//textarea[@class='gLFyf']")
     WebElement searchField;
 

@@ -15,7 +15,6 @@ import java.io.File;
 
 public class ListenerClass extends BaseTest implements ITestListener {
     private final Logger logger = LogManager.getLogger(ListenerClass.class);
-    String filePath = PropertiesReader.testConfigProperties.screenshotFolder();
 
     @Override
     public void onTestFailure(ITestResult testResult) {
@@ -25,6 +24,7 @@ public class ListenerClass extends BaseTest implements ITestListener {
     }
 
     public void takeScreenShot(String testName, WebDriver driver) {
+       String filePath =  PropertiesReader.testConfigProperties.screenshotFolder();
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
            File file=FileUtils.getFile(filePath, testName + ".png");

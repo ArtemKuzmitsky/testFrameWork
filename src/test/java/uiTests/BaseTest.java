@@ -38,8 +38,7 @@ public class BaseTest {
 
     @AfterTest
     public void close() {
-        if (driver != null)
-            driver.quit();
+        driver.quit();
         DriverConfig.removeDriver();
     }
 

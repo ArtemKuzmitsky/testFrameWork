@@ -16,7 +16,8 @@ public class PropertiesReader {
     //Classic variant
     public void readProperties() {
         try {
-            properties.load(new FileInputStream(System.getProperty("user.dir") + "/resources/testConfig.properties"));
+            String test = System.getProperty("user.dir") + "src/main/resources/testConfig.properties";
+            properties.load(new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/testConfig.properties"));
         } catch (IOException e) {
             logger.error("Exception in PropertiesReader class" + e.getMessage());
         }

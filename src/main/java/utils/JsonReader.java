@@ -6,8 +6,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
 import org.testng.Reporter;
 
 import java.io.File;

@@ -1,10 +1,6 @@
 package uiTests;
 
 import io.qameta.allure.Description;
-import org.testng.Assert;
-import org.testng.ITestContext;
-import org.testng.ITestResult;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 import schemes.TestData;
 import utils.JsonReader;
@@ -13,20 +9,20 @@ import static org.testng.Assert.assertEquals;
 
 public class SearchTest extends BaseTest {
 
-    @Test(testName = "searchItemTest", priority = 1)
+    @Test(testName = "searchItemTest")
     @Description("Simple google search test")
 
-    public void searchItemTest(ITestContext context) {
+    public void searchItemTest() {
         TestData testData = JsonReader.loadDataObject(TestData.class);
-        popUpWindows.clickRejectButton()
-                .enterIntoSearchField(testData.getSearchData());
+        popUpWindows.clickRejectButton();
+        searchPage  .enterIntoSearchField(testData.getSearchData());
         keyboardActions.clickEnterButton();
     }
 
-    @Test(testName = "anotherSearchItemTest", priority = 2)
+    @Test(testName = "anotherSearchItemTest")
     @Description("Simple google search test")
 
-    public void anotherSearchItemTest(ITestContext context) {
+    public void anotherSearchItemTest() {
         TestData testData = JsonReader.loadDataObject(TestData.class);
         popUpWindows.clickRejectButton();
         searchPage.enterIntoSearchField(testData.getSearchData());
