@@ -36,11 +36,9 @@ public class BaseTest {
         driver.get(properties.getProperty("url"));
     }
 
-
-
     @AfterTest
     public void close() {
-            driver.quit();
+        driver.quit();
         DriverConfig.removeDriver();
     }
 

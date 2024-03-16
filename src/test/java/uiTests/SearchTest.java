@@ -5,6 +5,8 @@ import org.testng.annotations.Test;
 import schemes.TestData;
 import utils.JsonReader;
 
+import static org.testng.Assert.assertEquals;
+
 public class SearchTest extends BaseTest {
 
     @Test(testName = "searchItemTest")

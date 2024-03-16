@@ -3,6 +3,7 @@ package utils;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.testng.Reporter;
