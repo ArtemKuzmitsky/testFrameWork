@@ -1,6 +1,6 @@
-#Simple Selenium Test FrameWork
+# Simple Selenium Test FrameWork
 
-##Uses:
+## Uses:
 * UI: Selenium, TestNG
 * API: RestAssured
 * Reported: Allure
