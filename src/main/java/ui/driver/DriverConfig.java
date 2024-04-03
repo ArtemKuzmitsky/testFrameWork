@@ -56,4 +56,7 @@ public class DriverConfig {
         driver.remove();
     }
 
+    public static WebDriver getDriver() {
+        return driver.get();
+    }
 }

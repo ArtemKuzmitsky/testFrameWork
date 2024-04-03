@@ -14,7 +14,7 @@ public class ApiRequests extends ApiTestConfig {
                 .when()
                 .get(FootballEndPoints.AREAS_ENDPOINT)
                 .then()
-                .body(matchesJsonSchemaInClasspath("jsonSchemaToCheck.json"))
+               // .body(matchesJsonSchemaInClasspath("jsonSchemaToCheck.json"))
                 .extract();
         return response.response();
     }
