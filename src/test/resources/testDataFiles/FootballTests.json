@@ -3,11 +3,23 @@
     "data": [
       {
         "id": "2267",
-        "childAreas": [
-          {
-            "name": "test"
-          }
-        ]
+        "childAreas":
+          [{
+            "name": "Africa"
+          }]
+
+      }
+    ]
+  },
+  "postTestReq": {
+    "data": [
+      {
+        "id": "2267",
+        "childAreas":
+        [{
+          "name": "Africa"
+        }]
+
       }
     ]
   }

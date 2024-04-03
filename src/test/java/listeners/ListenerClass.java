@@ -18,6 +18,9 @@ import utils.PropertiesReader;
 import java.io.File;
 import java.io.FileInputStream;
 
+import static io.qameta.allure.model.Status.BROKEN;
+import static io.qameta.allure.model.Status.FAILED;
+
 public class ListenerClass implements ITestListener, TestLifecycleListener {
     private final Logger logger = LogManager.getLogger(ListenerClass.class);
 
@@ -44,7 +47,7 @@ public class ListenerClass implements ITestListener, TestLifecycleListener {
     @Override
     public void beforeTestStop(TestResult result) {
         String testName = result.getName().trim();
-        if(DriverConfig.getDriver()!=null) {
+        if(DriverConfig.getDriver()!=null && ((FAILED == result.getStatus() || BROKEN == result.getStatus()))) {
             takeScreenShot(testName, DriverConfig.getDriver());
         }
         }

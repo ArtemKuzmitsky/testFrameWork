@@ -21,21 +21,8 @@ public class AreaModel {
     private String flag;
     private String parentAreaId;
     private String parentArea;
-    @JsonProperty("ChildAreas")
-    private List<ChildAreasModel> childAreas;
-
-    public AreaModel(){
-
-    }
-    public AreaModel(String id, String name, String code, String flag, String parentAreaId, String parentArea, List<ChildAreasModel> childAreas) {
-        this.id = id;
-        this.name = name;
-        this.code = code;
-        this.flag = flag;
-        this.parentAreaId = parentAreaId;
-        this.parentArea = parentArea;
-        this.childAreas =  childAreas;
-    }
+    @JsonProperty("childAreas")
+    private List <ChildAreasModel> childAreas;
 
     public String getId() {
         return id;
@@ -61,8 +48,69 @@ public class AreaModel {
         return parentArea;
     }
 
-    public List<ChildAreasModel> getChildAreas() {
+    public List <ChildAreasModel> getChildAreas() {
         return childAreas;
     }
 
+   public static class ChildAreasModel {
+        String id;
+        @JsonProperty("name")
+        String name;
+        String countryCode;
+        String flag;
+        String parentAreaId;
+        String parentArea;
+
+
+        public String getCountryCode() {
+            return countryCode;
+        }
+
+        public String getFlag() {
+            return flag;
+        }
+
+        public String getParentAreaId() {
+            return parentAreaId;
+        }
+
+        public String getParentArea() {
+            return parentArea;
+        }
+
+
+        public String getName() {
+            return name;
+        }
+
+        public String getId() {
+            return this.id;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+        public void setCountryCode(String countryCode) {
+            this.countryCode = countryCode;
+        }
+
+        public void setFlag(String flag) {
+            this.flag = flag;
+        }
+
+        public void setParentAreaId(String parentAreaId) {
+            this.parentAreaId = parentAreaId;
+        }
+
+        public void setParentArea(String parentArea) {
+            this.parentArea = parentArea;
+        }
+
+
+    }
 }
