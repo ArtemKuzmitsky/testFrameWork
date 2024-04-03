@@ -3,7 +3,7 @@
 ## Uses:
 * UI: Selenium, TestNG
 * API: RestAssured
-* Reported: Allure
+* Reporter: Allure
 
 ## Hor to run:
 
