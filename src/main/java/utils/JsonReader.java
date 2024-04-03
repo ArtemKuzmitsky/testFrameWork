@@ -27,6 +27,8 @@ public class JsonReader {
                 objValue = objectMapper.treeToValue(node, clazz);
             } catch (IOException e) {
                 logger.error("Error during jsonData loading" + e.getMessage());
+            } catch (NullPointerException e) {
+                logger.error("No test data for the test!!!");
             }
         } else {
             logger.error("No data found for the test: ");

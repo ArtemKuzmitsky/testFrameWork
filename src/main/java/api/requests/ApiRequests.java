@@ -1,6 +1,8 @@
 package api.requests;
 
 import api.ApiTestConfig;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import config.FootballEndPoints;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
@@ -30,9 +32,16 @@ public class ApiRequests extends ApiTestConfig {
         return response.response();
     }
 
-    public Response dummyPostReq(String body){
+    public Response dummyPostReq(Object body){
+        ObjectMapper objectMapper = new ObjectMapper();
+        String request =null;
+        try {
+            request= objectMapper.writeValueAsString(body);
+        } catch (JsonProcessingException e) {
+            e.printStackTrace();
+        }
         ExtractableResponse<Response> response = given()
-                .body(body)
+                .body(request)
                 .when()
                 .post(FootballEndPoints.POST_ENDPOINT)
                 .then()
