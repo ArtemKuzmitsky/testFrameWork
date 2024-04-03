@@ -5,7 +5,7 @@ build
 /*/allure-results/
 out
 .gradletasknamecache
-
+.idea/
 #IDEA Files
 .idea/*
 !.idea/vcs.xml

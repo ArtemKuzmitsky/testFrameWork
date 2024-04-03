@@ -9,6 +9,10 @@ public interface TestConfigProperties extends Config {
 
     String url();
 
+    String baseURL();
+
+    String basePath();
+
     @Key("test_data_file_path")
     String testDataFilePath();
 

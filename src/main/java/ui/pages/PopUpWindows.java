@@ -1,5 +1,6 @@
 package ui.pages;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
@@ -17,7 +18,7 @@ public class PopUpWindows {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-
+    @Step("Close pop up window")
     public SearchPage clickRejectButton() {
         if (rejectButton.size() > 0) {
             rejectButton.get(0).click();
