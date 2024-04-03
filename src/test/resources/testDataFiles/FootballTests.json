@@ -1,0 +1,14 @@
+{
+  "secondTest": {
+    "data": [
+      {
+        "id": "2267",
+        "childAreas": [
+          {
+            "name": "test"
+          }
+        ]
+      }
+    ]
+  }
+}

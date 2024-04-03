@@ -1,0 +1,51 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Generated schema for Root",
+  "type": "object",
+  "properties": {
+    "count": {
+      "type": "number"
+    },
+    "filters": {
+      "type": "object",
+      "properties": {},
+      "required": []
+    },
+    "areas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "number"
+          },
+          "name": {
+            "type": "string"
+          },
+          "countryCode": {
+            "type": "string"
+          },
+          "flag": {
+            "type": "string"
+          },
+          "parentAreaId": {
+            "type": "number"
+          },
+          "parentArea": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "countryCode"
+        ]
+      }
+    }
+  },
+  "required": [
+    "count",
+    "filters",
+    "areas"
+  ]
+}
