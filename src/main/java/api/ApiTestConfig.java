@@ -10,16 +10,17 @@ import utils.TestConfigProperties;
 
 public class ApiTestConfig {
     static TestConfigProperties configProperties = PropertiesReader.getTestConfigProperties();
-    public static void setUp(){
 
-        RestAssured.requestSpecification= new RequestSpecBuilder()
+    public static void setUp() {
+
+        RestAssured.requestSpecification = new RequestSpecBuilder()
                 .setBaseUri(configProperties.baseURL())
                 .setBasePath(configProperties.basePath())
-                .addHeader("X-Auth-Token","a5b55f05b6724d3b98a55ecb9de27627")
+                .addHeader("X-Auth-Token", "a5b55f05b6724d3b98a55ecb9de27627")
                 .addFilter(new RequestLoggingFilter())
                 .addFilter(new ResponseLoggingFilter())
-        .build();
+                .build();
 
-        RestAssured.responseSpecification= new ResponseSpecBuilder().expectStatusCode(200).build();
+        RestAssured.responseSpecification = new ResponseSpecBuilder().expectStatusCode(200).build();
     }
 }

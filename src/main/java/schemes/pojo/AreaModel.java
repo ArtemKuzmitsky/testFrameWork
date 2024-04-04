@@ -3,11 +3,9 @@ package schemes.pojo;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 import javax.annotation.Generated;
 import java.util.List;
-import java.util.Map;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -22,7 +20,7 @@ public class AreaModel {
     private String parentAreaId;
     private String parentArea;
     @JsonProperty("childAreas")
-    private List <ChildAreasModel> childAreas;
+    private List<ChildAreasModel> childAreas;
 
     public String getId() {
         return id;
@@ -48,11 +46,11 @@ public class AreaModel {
         return parentArea;
     }
 
-    public List <ChildAreasModel> getChildAreas() {
+    public List<ChildAreasModel> getChildAreas() {
         return childAreas;
     }
 
-   public static class ChildAreasModel {
+    public static class ChildAreasModel {
         String id;
         @JsonProperty("name")
         String name;

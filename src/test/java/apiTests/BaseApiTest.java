@@ -8,8 +8,8 @@ public class BaseApiTest {
     public static ApiRequests requests;
 
     @BeforeClass
-    public void setUpTests(){
+    public void setUpTests() {
         ApiTestConfig.setUp();
-        requests=new ApiRequests();
+        requests = new ApiRequests();
     }
 }

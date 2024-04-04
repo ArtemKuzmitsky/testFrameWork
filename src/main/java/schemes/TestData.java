@@ -26,10 +26,12 @@ public class TestData {
     public String getLogin() {
         return login;
     }
+
     @JsonProperty("password")
     public String getPassword() {
         return password;
     }
+
     @JsonProperty("searchData")
     public String getSearchData() {
         return searchData;

@@ -12,7 +12,6 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import ui.driver.DriverConfig;
-import uiTests.BaseTest;
 import utils.PropertiesReader;
 
 import java.io.File;
@@ -30,10 +29,10 @@ public class ListenerClass implements ITestListener, TestLifecycleListener {
     }
 
     public void takeScreenShot(String testName, WebDriver driver) {
-       String filePath =  PropertiesReader.testConfigProperties.screenshotFolder();
+        String filePath = PropertiesReader.testConfigProperties.screenshotFolder();
         File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         try {
-           File file=FileUtils.getFile(filePath, testName + ".png");
+            File file = FileUtils.getFile(filePath, testName + ".png");
             if (file.exists()) {
                 file.delete();
             }
@@ -44,12 +43,13 @@ public class ListenerClass implements ITestListener, TestLifecycleListener {
         }
 
     }
+
     @Override
     public void beforeTestStop(TestResult result) {
         String testName = result.getName().trim();
-        if(DriverConfig.getDriver()!=null && ((FAILED == result.getStatus() || BROKEN == result.getStatus()))) {
+        if (DriverConfig.getDriver() != null && ((FAILED == result.getStatus() || BROKEN == result.getStatus()))) {
             takeScreenShot(testName, DriverConfig.getDriver());
         }
-        }
+    }
 
 }

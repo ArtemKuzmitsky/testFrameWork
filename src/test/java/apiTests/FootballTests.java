@@ -8,30 +8,27 @@ import org.testng.annotations.Test;
 import schemes.pojo.AreaModel;
 import utils.JsonReader;
 
-import java.io.File;
-import java.io.IOException;
-
 
 public class FootballTests extends BaseApiTest {
 
     @Test
     public void firstTest() {
-       Response response=requests.getAllAreas();
-       Assert.assertEquals(response.statusCode(), 200);
+        Response response = requests.getAllAreas();
+        Assert.assertEquals(response.statusCode(), 200);
     }
 
     @Test
     public void secondTest() {
         AreaModel areaModelData = JsonReader.loadDataObject(AreaModel.class);
-        Response response=requests.getArea(areaModelData.getId());
+        Response response = requests.getArea(areaModelData.getId());
         AreaModel areaModel = response.getBody().as(AreaModel.class);
         String valueToCheck = areaModel.getChildAreas().get(0).getName();
         String expectedValueToCheck = areaModelData.getChildAreas().get(0).getName();
-        Assert.assertEquals(valueToCheck,expectedValueToCheck);
+        Assert.assertEquals(valueToCheck, expectedValueToCheck);
     }
 
     @Test(enabled = false)
-    public void postTestReq(){
+    public void postTestReq() {
         AreaModel areaModelData = JsonReader.loadDataObject(AreaModel.class);
         Response response = requests.dummyPostReq(areaModelData);
     }

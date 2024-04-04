@@ -7,7 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class SearchPage {
-    protected  WebDriver driver;
+    protected WebDriver driver;
     @FindBy(xpath = ".//textarea[@class='gLFyf']")
     WebElement searchField;
 
@@ -16,6 +16,7 @@ public class SearchPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @Step("Enter text {0} into search field")
     public SearchPage enterIntoSearchField(String text) {
         searchField.sendKeys(text);

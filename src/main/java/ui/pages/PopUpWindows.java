@@ -18,6 +18,7 @@ public class PopUpWindows {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
     @Step("Close pop up window")
     public SearchPage clickRejectButton() {
         if (rejectButton.size() > 0) {

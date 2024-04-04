@@ -24,8 +24,8 @@ public class PropertiesReader {
     }
 
     //Using Owner
-    public static TestConfigProperties getTestConfigProperties(){
-       return testConfigProperties = ConfigFactory.create(TestConfigProperties.class);
+    public static TestConfigProperties getTestConfigProperties() {
+        return testConfigProperties = ConfigFactory.create(TestConfigProperties.class);
     }
 
 

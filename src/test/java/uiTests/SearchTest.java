@@ -6,7 +6,6 @@ import org.testng.annotations.Test;
 import schemes.TestData;
 import utils.JsonReader;
 
-import static org.testng.Assert.assertEquals;
 @Epic("Simple google search")
 @Feature(value = "Simple search")
 public class SearchTest extends BaseTest {
@@ -18,9 +17,9 @@ public class SearchTest extends BaseTest {
     public void searchItemTest() {
         TestData testData = JsonReader.loadDataObject(TestData.class);
         popUpWindows.clickRejectButton();
-        searchPage  .enterIntoSearchField(testData.getSearchData());
+        searchPage.enterIntoSearchField(testData.getSearchData());
         keyboardActions.clickEnterButton();
-        Assert.assertEquals(driver.getTitle(),"test4");
+        Assert.assertEquals(driver.getTitle(), "test4");
     }
 
     @Test(testName = "anotherSearchItemTest")

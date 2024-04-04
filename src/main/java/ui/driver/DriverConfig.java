@@ -20,6 +20,7 @@ public class DriverConfig {
     private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
     private static final URI remoteUrl = URI.create("");
     static Logger logger = LogManager.getLogger(DriverConfig.class);
+
     private DriverConfig() {
 
     }
@@ -38,12 +39,12 @@ public class DriverConfig {
                 DesiredCapabilities capabilities = new DesiredCapabilities();
                 capabilities.setCapability("browserName", "chrome");
                 try {
-                    driver.set( WebDriverManager.chromedriver()
+                    driver.set(WebDriverManager.chromedriver()
                             .capabilities(capabilities)
                             .remoteAddress(new URL("http://localhost:4444"))
                             .create());
                 } catch (MalformedURLException e) {
-                    logger.error("Error during remote drive init! "+e.getMessage());
+                    logger.error("Error during remote drive init! " + e.getMessage());
                 }
             }
         }
